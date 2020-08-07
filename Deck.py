@@ -5,14 +5,12 @@ class Deck:
     #Constructor for Deck - num is # of decks you want to use
     def __init__(self,num):
         self.deck = list()
-        
         for i in range(num):
             for j in range(1,5):
                 for k in range(1,14):
                     self.deck.append(Card(j,k))
         self.length = len(self.deck)
     
-
     def print_deck(self):
         print(self.deck)
 
@@ -24,16 +22,19 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.deck)
 
-    #Allows the user to draw N cards - returns in LIST
-    def draw(self,n):
+    #Allows the user to draw N cards - returns in LIST - Also removes from deck list
+    def draw(self,n=1):
         drawnCards = list()
         for i in range(n):
             if(len(self.deck) == 0):
+                self.length = len(self.deck)
                 print("Sorry! The deck is empty and no more cards can be drawn")
                 return drawnCards
             drawnCards.append(self.deck.pop(0)) #I have it returning the nice symbole right now but I can change this later
+        self.length = len(self.deck)
         return drawnCards
 
 cards = Deck(1)
 cards.shuffle()
 cards.print_deck()
+#print (cards.draw(5))

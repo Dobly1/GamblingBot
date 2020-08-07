@@ -26,6 +26,7 @@ class Card:
         self.rank = ranks.get(rank)
         self.symbol = ("["+self.rank+self.suit+"]")
 
+    #Overloaded operator to print 
     def __str__(self):
         suits = {
             "S": "\u2660", #Spade
@@ -36,6 +37,7 @@ class Card:
         tempSuit = suits.get(self.suit)
         return ("["+self.rank+tempSuit+"]")
 
+    #Overloaded representation operator
     def __repr__(self):
         suits = {
             "S": "\u2660", #Spade
@@ -45,6 +47,18 @@ class Card:
         }
         tempSuit = suits.get(self.suit)
         return ("["+self.rank+tempSuit+"]")
+
+    #Overloaded Greater than operator
+    def __gt__(self,other):
+        return self.rank > other.get_rank()
+
+    #Overloaded Greater than or equal operator
+    def __ge__(self,other):
+        return self.rank >= other.get_rank()
+
+    #Overloaded Equals operator
+    def __eq__(self,other):
+        return self.rank == other.get_rank()
 
     #Print card symbol as it's stored
     def get_symbol(self):
@@ -57,5 +71,3 @@ class Card:
     #Rank getter
     def get_rank(self):
         return self.rank
-
-    #TODO: Implement Card COMPARE function
