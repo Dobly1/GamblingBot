@@ -14,4 +14,4 @@ async def on_message(message):
     if message.content.startswith('gamblino'):
         await message.channel.send('What\'s up?')
 
-client.run('NzM5ODczNjMwODE2Njk4NTAx.XygzAw.JVBq0HgU_nxlXdRMhAiZa1og3cU')
+client.run('BOT_TOKEN_HERE')
