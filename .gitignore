@@ -1,2 +1,3 @@
 Plan.txt
-Bot.py
+config.json
+*.db
